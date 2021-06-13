@@ -1,0 +1,491 @@
+/* variables */
+:root{
+    --light-red : hsl(356, 100%, 66%);
+    --very-light-red : hsl(355, 100%, 74%);
+    --very-dark-blue: hsl(208, 49%, 24%);
+    --grayish-blue: hsl(208, 49%, 24%);
+    --very-dark-grayish-blue: hsl(207, 13%, 34%);
+    --very-dark-black-blue: hsl(240, 10%, 16%);
+}
+/* general css */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* components */
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media(min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media(min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media(min-width: 1200px) {
+    .container {
+        width: 1150px;
+    }
+}
+a {
+    text-decoration: none;
+}
+.sign-up {
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 20px 50px;
+    color: red;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.sign-up:hover {
+    color: white;
+    background-color: hsl(353, 90%, 75%);
+    cursor: pointer;
+}
+.sign-up:active{
+    background-color: hsl(330, 31%, 44%);
+}
+/* header */
+header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    font-family: 'Overpass', sans-serif;
+}
+header .container {
+    display: flex;
+    padding: 40px;
+}
+header .container h1 {
+    font-size: 3rem;
+    color: white;
+    margin-right: 60px;
+    font-weight: bold;
+}
+header .container nav {
+    align-self: center;
+}
+header .container ul  {
+    list-style-type: none;
+}
+header .container .link {
+    display: inline;
+    position: relative;
+    text-decoration: none;
+    padding: 0 20px;
+    color: white;
+}
+header .container .link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.hidden li {
+    padding: 5px 0;
+}
+.hidden li:hover {
+    color: black;
+    font-weight: bolder;
+}
+header .container .link:hover .hidden {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 20px grey;
+    color: black;
+    padding: 10px;
+}
+header .container li a {
+    
+}
+header .container .buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+header .container .buttons button {
+    margin: 0 20px;
+}
+header .login {
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+header .login:hover {
+    cursor: pointer;
+    color: red;
+}
+header .login:active {
+    color: wheat;
+}
+.menu {
+    display: none;
+    position: absolute;
+    right: 50px;
+}
+.hidd {
+    display: none;
+}
+/* responsive tablet */
+@media(max-width: 992px) {
+    .ul {
+        display: none;
+    }
+    header .container .buttons {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    
+}
+/* responsive mobile */
+
+/* menu for mobile */
+.mobile {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+.mobile-vs {
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 3px hsl(207, 13%, 34%);
+}
+.mobile-vs ul {
+    list-style-type: none;
+}
+.mobile-vs li {
+    padding: 20px 0;
+}
+.item {
+    border-bottom: 1px solid hsl(207, 13%, 54%);
+}
+.list {
+    height: 0;
+    overflow: hidden;
+}
+.list-vs {
+    height: 100%;
+    background-color: hsl(207, 13%, 90%);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.list-vs li {
+    color: grey;
+}
+.mobile-vs .login {
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.mobile-vs .sign-up{
+    background-color: red;
+    color: white;
+}
+.mobile-vs .buttons {
+    margin-top: 50px;
+}
+/* end of mobile css */
+/* end of header */
+/* landing */
+.landing {
+    background-image: url(../blogr-site/images/bg-pattern-intro.svg);
+    background-position: -370px -1249px;
+    background-repeat: no-repeat;
+    background-size: 3000px;
+    height: 100vh;
+    z-index: 5;
+}
+.landing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    border-radius: 0 0 0 10%;
+    background-image: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    z-index: -1;
+}
+
+.landing .container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.landing .container h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+.landing .container p {
+    color: white;
+    margin-bottom: 50px;
+}
+.landing .container .buttons {
+    padding: 20px;
+}
+.landing .container .buttons .learn-more {
+    padding: 20px 40px;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.landing .container .buttons .learn-more:hover {
+    background-color: white;
+    color: red;
+    cursor: pointer;
+}
+.landing .container .buttons .learn-more:active {
+    background-color: wheat;
+}
+/* responsive */
+@media (max-width: 767px) {
+    .landing .overlay {
+        border-radius: 0 0 0 20%;
+    }
+    .landing .container h1 {
+        margin-top: 100px;
+    }
+    .landing .container p {
+        font-size: 0.8rem;
+    }
+    .landing .container .buttons button {
+        margin-bottom: 20px;
+        width: 200px;
+    }
+   .landing .container .buttons .learn-more{
+       margin: 0;
+   }
+}
+/* end landing */
+/* designed */
+.designed {
+    position: relative;
+    margin-bottom: 300px;
+}
+.designed .container h1 {
+    text-align: center;
+    font-weight: bold;
+    padding: 100px 0;
+    width: 100%;
+}
+.parag1, .parag2 {
+    width: 60%;
+}
+.designed .container .paragraph p {
+    margin-top: 20px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+}
+.designed .container .img{
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+.designed .container .img img {
+    position: relative;
+    left: 180px;
+    width: 50vw;
+}
+/* reponsive */
+@media(max-width: 1440px) {
+    .parag1, .parag2 {
+        width: 50%;
+    }
+    .designed .container .img img {
+        width: 45vw;
+    }
+}
+@media(max-width: 992px) {
+    .designed{ text-align: center;}
+    .parag1, .parag2 {
+        width: 100%;
+    }
+    .designed .container .img{
+        position: relative;
+    }
+    .designed .container .img img{
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+}
+/* end designed*/
+/* state */
+.state {
+    height: 400px;
+    position: relative;
+}
+.state .overlay{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    border-radius: 0 40px 0 50px;
+    background-image: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    z-index: -1;
+}
+.state .container .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.state .container .paragraph {
+    color: white;
+    width: 40%;
+}
+.state .container .paragraph p {
+    color: hsl(207, 13%, 70%);
+    line-height: 1.4;
+    margin-top: 20px;
+}
+.state .container img {
+    max-width: 100%;
+}
+@media(max-width: 992px) {
+    .state {
+        margin-top: 100px;
+        text-align: center;
+    }
+    .state .overlay{
+        height: 550px;
+        top: 200px;
+    }
+    .state .container .paragraph {
+        color: white;
+        width: 100%;
+    }
+
+}
+/* end state */
+/*/ section4 */
+.section4 {
+    position: relative;
+}
+.section4 .img{
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 150px;
+}
+.section4 .img img {
+    position: relative;
+    right: 150px;
+    width: 50vw;
+}
+.section4 .container .paragraph {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+}
+.section4 .parag1, .section4 .parag2 {
+    width: 70%;
+}
+.section4 .container .paragraph p {
+    margin-top: 20px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+}
+/* responsive */
+@media(max-width: 992px) {
+    .section4{ 
+        text-align: center;
+        margin-top: 300px;
+    }
+    .section4 .parag1, .section4 .parag2 {
+        width: 100%;
+    }
+    .section4 .img{
+        position: relative;
+    }
+    .section4 .img img{
+        position: relative;
+        right: 0;
+        left: 0;
+    }
+    .section4 .container .paragraph{
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+}
+/* end section 4/*/
+/* footer */
+ul{
+    list-style-type: none;
+}
+footer {
+    margin-top: 1000px;
+    background-color: var(--very-dark-black-blue);
+    color: white;
+    padding: 50px;
+}
+footer .container .grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+}
+footer .container .grid h1 {
+    margin-top: 20px;
+}
+footer .container .grid ul li {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: hsl(207, 13%, 90%);
+}
+@media(max-width: 992px) {
+    footer {
+        text-align: center;
+    }
+}
